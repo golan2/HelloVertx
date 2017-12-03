@@ -16,7 +16,7 @@ public class SimpleVertxServer {
             System.out.println("Prepare");
             server.requestHandler(request -> {
                 HttpServerResponse response = request.response();
-                final StringBuilder buf = generateResponse();
+                final StringBuilder buf = generatePersonResponse();
                 response.end(buf.toString());
             });
             System.out.println("Listening");
@@ -33,7 +33,142 @@ public class SimpleVertxServer {
         }
     }
 
-    private static StringBuilder generateResponse() {
+
+
+    private static StringBuilder generatePersonResponse() {
+        final StringBuilder buf = new StringBuilder();
+        buf.append("{\n" +
+                "  \"title\": \"David Stoller\", \n" +
+                "  \"person_id\": \"nm4793928\", \n" +
+                "  \"image\": {\n" +
+                "    \"poster\": \"http://ia.media-imdb.com/images/G/01/imdb/images/logos/imdb_fb_logo-1730868325._CB514892123_.png\", \n" +
+                "    \"thumb\": \"\"\n" +
+                "  }, \n" +
+                "  \"type\": [\n" +
+                "    \"Actor\", \n" +
+                "    \"Soundtrack\"\n" +
+                "  ], \n" +
+                "  \"description\": \"David Stoller was born on 25th September 1978 in London, England. He graduated from the University of Hertfordshire in 2000 with a First Class BA Hons Degree in Performing Arts. During his time there he was also awarded the prestigious Sir Nigel Hawthorne Award for Outstanding Achievement. David has been acting professionally for nearly fifteen ...\", \n" +
+                "  \"birthday\": \"\", \n" +
+                "  \"birthplace\": \"\", \n" +
+                "  \"filmography\": {\n" +
+                "    \"soundtrack\": [\n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt1707386/\", \n" +
+                "        \"year\": \"2012\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt1707386\", \n" +
+                "        \"title\": \"Les Mis\\u00e9rables\"\n" +
+                "      }\n" +
+                "    ], \n" +
+                "    \"actor\": [\n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt1255919/\", \n" +
+                "        \"year\": \"2018\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt1255919\", \n" +
+                "        \"title\": \"Holmes and Watsonpost-production\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt6439574/\", \n" +
+                "        \"year\": \"2017\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt6439574\", \n" +
+                "        \"title\": \"Make Room in Hellpost-production\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt1885411/\", \n" +
+                "        \"year\": \"\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt1885411\", \n" +
+                "        \"title\": \"The Devil Went Down to Islingtonpost-production\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt6108178/\", \n" +
+                "        \"year\": \"2017\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt6108178\", \n" +
+                "        \"title\": \"Disobedience\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt5093026/\", \n" +
+                "        \"year\": \"2017/I\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt5093026\", \n" +
+                "        \"title\": \"Papillon\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt4085696/\", \n" +
+                "        \"year\": \"2014\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt4085696\", \n" +
+                "        \"title\": \"Billy Elliot\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt4253462/\", \n" +
+                "        \"year\": \"2014\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt4253462\", \n" +
+                "        \"title\": \"From Here to Eternity: The Musical\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt3375378/\", \n" +
+                "        \"year\": \"2013\", \n" +
+                "        \"type\": \"Short Film\", \n" +
+                "        \"imdb_id\": \"tt3375378\", \n" +
+                "        \"title\": \"Take Away\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt3031176/\", \n" +
+                "        \"year\": \"2013\", \n" +
+                "        \"type\": \"Short Film\", \n" +
+                "        \"imdb_id\": \"tt3031176\", \n" +
+                "        \"title\": \"The Boy with a Camera for a Face\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt4922500/\", \n" +
+                "        \"year\": \"2013\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt4922500\", \n" +
+                "        \"title\": \"St Milligans Wharf\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt3054600/\", \n" +
+                "        \"year\": \"2013\", \n" +
+                "        \"type\": \"Short Film\", \n" +
+                "        \"imdb_id\": \"tt3054600\", \n" +
+                "        \"title\": \"Behind You\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt2333088/\", \n" +
+                "        \"year\": \"2012/II\", \n" +
+                "        \"type\": \"Short Film\", \n" +
+                "        \"imdb_id\": \"tt2333088\", \n" +
+                "        \"title\": \"Saturday\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt1707386/\", \n" +
+                "        \"year\": \"2012\", \n" +
+                "        \"type\": \"Film\", \n" +
+                "        \"imdb_id\": \"tt1707386\", \n" +
+                "        \"title\": \"Les Mis\\u00e9rables\"\n" +
+                "      }, \n" +
+                "      {\n" +
+                "        \"url\": \"http://www.imdb.com/title/tt2123941/\", \n" +
+                "        \"year\": \"2011\", \n" +
+                "        \"type\": \"Short Film\", \n" +
+                "        \"imdb_id\": \"tt2123941\", \n" +
+                "        \"title\": \"Flesh/Blood\"\n" +
+                "      }\n" +
+                "    ]\n" +
+                "  }, \n" +
+                "  \"photos\": []\n" +
+                "}");
+        return buf;
+    }
+
+
+    private static StringBuilder generateSearchResponse() {
         final StringBuilder buf = new StringBuilder();
         buf.append("[\n" +
                 "  {\n" +
